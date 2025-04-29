@@ -10,6 +10,15 @@ import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
+interface AmortizationItem {
+  payment: number
+  year: number
+  emi: number
+  principalPayment: number
+  interestPayment: number
+  balance: number
+}
+
 export default function EmiCalculator() {
   const [loanAmount, setLoanAmount] = useState<number>(1000000)
   const [interestRate, setInterestRate] = useState<number>(8.5)
@@ -18,7 +27,7 @@ export default function EmiCalculator() {
   const [totalInterest, setTotalInterest] = useState<number>(0)
   const [totalPayment, setTotalPayment] = useState<number>(0)
   const [showAmortization, setShowAmortization] = useState<boolean>(false)
-  const [amortizationSchedule, setAmortizationSchedule] = useState<any[]>([])
+  const [amortizationSchedule, setAmortizationSchedule] = useState<AmortizationItem[]>([])
 
   useEffect(() => {
     calculateEMI()

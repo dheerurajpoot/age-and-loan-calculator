@@ -5,7 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-
+import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -56,20 +56,21 @@ export default function RootLayout({
 			<head>
 				<title>CalcTools - Age & EMI Calculator</title>
 				<meta name='robots' content='index, follow' />
-				<script src='https://www.googletagmanager.com/gtag/js?id=G-18V1J1V111' />
-				<script id='google-tag-manager'>
+				<Script src='https://www.googletagmanager.com/gtag/js?id=G-18V1J1V111' />
+				<Script id='google-tag-manager' strategy='lazyOnload'>
 					{`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-18V1J1V111');
           `}
-				</script>
+				</Script>
 				{/* Google Adsense publisher code */}
-				<script
+				<Script
 					async
 					src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456'
-					crossOrigin='anonymous'></script>
+					crossOrigin='anonymous'
+					strategy='lazyOnload'></Script>
 				{/* google Search Console verification */}
 				<meta name='google-site-verification' content='G-18V1J1V111' />
 			</head>

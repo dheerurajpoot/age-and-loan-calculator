@@ -54,7 +54,8 @@ export default function AgeCalculatorPage() {
 							Select End Date
 						</h3>
 						<p className='text-muted-foreground'>
-							Choose the end date or leave it as today's date.
+							Choose the end date or leave it as today&apos;s
+							date.
 						</p>
 					</div>
 					<div className='p-6 border rounded-lg bg-card text-card-foreground shadow-sm'>
@@ -99,7 +100,7 @@ export default function AgeCalculatorPage() {
 							Child Development
 						</h3>
 						<p className='text-muted-foreground'>
-							Track a child's exact age for developmental
+							Track a child&apos;s exact age for developmental
 							milestones.
 						</p>
 					</div>
