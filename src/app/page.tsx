@@ -1,103 +1,275 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+import {
+	CalendarDays,
+	Calculator,
+	ChevronRight,
+	Clock,
+	CreditCard,
+	DollarSign,
+	LineChart,
+	Percent,
+	PiggyBank,
+	Users,
+} from "lucide-react";
+
+export const metadata: Metadata = {
+	title: "CalcTools - Free Online Calculators",
+	description:
+		"Free online tools for age calculation and EMI calculation with accurate results.",
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+	return (
+		<div className='container mx-auto py-10 space-y-16'>
+			{/* Hero Section */}
+			<section className='relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-500 to-purple-600 py-16 px-8 text-white'>
+				<div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1200')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+				<div className='relative z-10 max-w-3xl mx-auto text-center space-y-6'>
+					<h1 className='text-5xl font-bold tracking-tight'>
+						Powerful Calculators for Your Financial Journey
+					</h1>
+					<p className='text-xl opacity-90'>
+						Free, accurate, and easy-to-use calculators to help you
+						make informed decisions.
+					</p>
+					<div className='flex flex-wrap justify-center gap-4 pt-4'>
+						<Button
+							asChild
+							size='lg'
+							className='bg-white text-purple-700 hover:bg-gray-100'>
+							<Link href='/age-calculator'>
+								Try Age Calculator{" "}
+								<ChevronRight className='ml-2 h-4 w-4' />
+							</Link>
+						</Button>
+						<Button
+							asChild
+							size='lg'
+							variant='outline'
+							className='border-white text-white hover:bg-white/20'>
+							<Link href='/emi-calculator'>
+								Try EMI Calculator{" "}
+								<ChevronRight className='ml-2 h-4 w-4' />
+							</Link>
+						</Button>
+					</div>
+				</div>
+			</section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+			{/* Featured Calculators */}
+			<section className='space-y-8'>
+				<div className='text-center space-y-3'>
+					<h2 className='text-3xl font-bold'>Our Calculators</h2>
+					<p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
+						Explore our range of free calculators designed to
+						simplify your calculations.
+					</p>
+				</div>
+
+				<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+					<Card className='overflow-hidden border-2 hover:border-teal-500 transition-all duration-300'>
+						<div className='absolute top-0 right-0 p-3 bg-teal-500 text-white rounded-bl-lg'>
+							<Clock className='h-5 w-5' />
+						</div>
+						<CardHeader className='pb-4'>
+							<CardTitle className='text-2xl flex items-center gap-2'>
+								<CalendarDays className='h-6 w-6 text-teal-500' />
+								Age Calculator
+							</CardTitle>
+							<CardDescription className='text-base'>
+								Calculate your exact age in years, months, and
+								days.
+							</CardDescription>
+						</CardHeader>
+						<CardContent className='pb-4'>
+							<div className='space-y-4'>
+								<div className='flex items-center gap-3'>
+									<div className='h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center'>
+										<Users className='h-5 w-5 text-teal-700' />
+									</div>
+									<div>
+										<h3 className='font-medium'>
+											Precise Age Calculation
+										</h3>
+										<p className='text-sm text-muted-foreground'>
+											Get your age down to the exact day
+										</p>
+									</div>
+								</div>
+								<div className='flex items-center gap-3'>
+									<div className='h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center'>
+										<CalendarDays className='h-5 w-5 text-teal-700' />
+									</div>
+									<div>
+										<h3 className='font-medium'>
+											Date Difference
+										</h3>
+										<p className='text-sm text-muted-foreground'>
+											Calculate time between any two dates
+										</p>
+									</div>
+								</div>
+							</div>
+						</CardContent>
+						<CardFooter className='pt-0'>
+							<Button
+								asChild
+								className='w-full bg-gradient-to-r from-teal-500 to-teal-700'>
+								<Link href='/age-calculator'>
+									Open Age Calculator{" "}
+									<ChevronRight className='ml-2 h-4 w-4' />
+								</Link>
+							</Button>
+						</CardFooter>
+					</Card>
+
+					<Card className='overflow-hidden border-2 hover:border-purple-500 transition-all duration-300'>
+						<div className='absolute top-0 right-0 p-3 bg-purple-500 text-white rounded-bl-lg'>
+							<Calculator className='h-5 w-5' />
+						</div>
+						<CardHeader className='pb-4'>
+							<CardTitle className='text-2xl flex items-center gap-2'>
+								<DollarSign className='h-6 w-6 text-purple-500' />
+								EMI Calculator
+							</CardTitle>
+							<CardDescription className='text-base'>
+								Plan your loan with accurate EMI calculations.
+							</CardDescription>
+						</CardHeader>
+						<CardContent className='pb-4'>
+							<div className='space-y-4'>
+								<div className='flex items-center gap-3'>
+									<div className='h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center'>
+										<CreditCard className='h-5 w-5 text-purple-700' />
+									</div>
+									<div>
+										<h3 className='font-medium'>
+											Loan EMI Calculation
+										</h3>
+										<p className='text-sm text-muted-foreground'>
+											Calculate monthly payments for any
+											loan
+										</p>
+									</div>
+								</div>
+								<div className='flex items-center gap-3'>
+									<div className='h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center'>
+										<LineChart className='h-5 w-5 text-purple-700' />
+									</div>
+									<div>
+										<h3 className='font-medium'>
+											Amortization Schedule
+										</h3>
+										<p className='text-sm text-muted-foreground'>
+											View year-by-year breakdown of your
+											loan
+										</p>
+									</div>
+								</div>
+							</div>
+						</CardContent>
+						<CardFooter className='pt-0'>
+							<Button
+								asChild
+								className='w-full bg-gradient-to-r from-purple-500 to-purple-700'>
+								<Link href='/emi-calculator'>
+									Open EMI Calculator{" "}
+									<ChevronRight className='ml-2 h-4 w-4' />
+								</Link>
+							</Button>
+						</CardFooter>
+					</Card>
+				</div>
+			</section>
+
+			{/* Features Section */}
+			<section className='py-10 bg-muted/50 rounded-3xl'>
+				<div className='container space-y-10'>
+					<div className='text-center space-y-3'>
+						<h2 className='text-3xl font-bold'>
+							Why Choose CalcTools?
+						</h2>
+						<p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
+							Our calculators are designed with you in mind.
+						</p>
+					</div>
+
+					<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+						<div className='bg-background p-6 rounded-xl shadow-sm border'>
+							<div className='h-12 w-12 rounded-lg bg-teal-100 flex items-center justify-center mb-4'>
+								<Percent className='h-6 w-6 text-teal-700' />
+							</div>
+							<h3 className='text-xl font-semibold mb-2'>
+								100% Accurate
+							</h3>
+							<p className='text-muted-foreground'>
+								Our calculators use precise algorithms to ensure
+								accurate results every time.
+							</p>
+						</div>
+						<div className='bg-background p-6 rounded-xl shadow-sm border'>
+							<div className='h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4'>
+								<PiggyBank className='h-6 w-6 text-purple-700' />
+							</div>
+							<h3 className='text-xl font-semibold mb-2'>
+								Always Free
+							</h3>
+							<p className='text-muted-foreground'>
+								All our calculators are completely free to use
+								with no hidden charges or limits.
+							</p>
+						</div>
+						<div className='bg-background p-6 rounded-xl shadow-sm border'>
+							<div className='h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4'>
+								<Users className='h-6 w-6 text-blue-700' />
+							</div>
+							<h3 className='text-xl font-semibold mb-2'>
+								User-Friendly
+							</h3>
+							<p className='text-muted-foreground'>
+								Simple, intuitive interfaces designed for
+								everyone, regardless of technical expertise.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* CTA Section */}
+			<section className='text-center space-y-6 py-10'>
+				<h2 className='text-3xl font-bold'>Ready to Get Started?</h2>
+				<p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
+					Try our calculators today and make informed decisions about
+					your finances.
+				</p>
+				<div className='flex flex-wrap justify-center gap-4 pt-4'>
+					<Button
+						asChild
+						size='lg'
+						className='bg-gradient-to-r from-teal-500 to-purple-600'>
+						<Link href='/age-calculator'>
+							Try Age Calculator{" "}
+							<ChevronRight className='ml-2 h-4 w-4' />
+						</Link>
+					</Button>
+					<Button asChild size='lg' variant='outline'>
+						<Link href='/emi-calculator'>
+							Try EMI Calculator{" "}
+							<ChevronRight className='ml-2 h-4 w-4' />
+						</Link>
+					</Button>
+				</div>
+			</section>
+		</div>
+	);
 }
